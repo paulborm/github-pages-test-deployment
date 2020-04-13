@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  gh-pages:
+    name: "Deploy to Github Pages"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm ci
+      - run: npm run build
+      - run: npx gh-pages -d public -b gh-pages"
