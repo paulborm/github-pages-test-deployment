@@ -13,4 +13,4 @@ jobs:
       - uses: actions/setup-node@v1
       - run: npm ci
       - run: npm run build
-      - run: npx gh-pages -d public -b gh-pages"
+      - run: npx gh-pages -d public"
